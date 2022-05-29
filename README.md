@@ -6,38 +6,38 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the "ELK Azure Network" file(s) may be used to install only certain pieces of it, such as Filebeat.
 
-=====================================================================================================================
+==================================================================================================
 
 Configuring Web Docker VM(s) with Ansible and Launch Web DVWA Docker Container:
-# [installWeb.yml](/Playbook%20and%20Configuration/playbooks/installWeb.yml) 
+### [installWeb.yml](/Playbook%20and%20Configuration/playbooks/installWeb.yml) 
 
 Configure E.L.K. Stack Server Docker VM with Ansible and increase Virtual Memory to "262144"        
-# [installELK.yml](/Playbook%20and%20Configuration/playbooks/installELK.yml)
+### [installELK.yml](/Playbook%20and%20Configuration/playbooks/installELK.yml)
 
 Filebeat Configuration file with updated IP Addressesfor current use:
-# [filebeat-config.yml](/Playbook%20and%20Configuration/configFile/filebeat-config.yml) 
+### [filebeat-config.yml](/Playbook%20and%20Configuration/configFile/filebeat-config.yml) 
 
 Playbook to install and launch filebeat service:
-# [filebeat-playbook.yml](/Playbook%20and%20Configuration/configFile/filebeat-playbook.yml)
+### [filebeat-playbook.yml](/Playbook%20and%20Configuration/configFile/filebeat-playbook.yml)
 
 Metricbeat Configuration file highlighted only the most common options:
-# [metricbeat-config.yml](/Playbook%20and%20Configuration/configFile/metricbeat-config.yml)
+### [metricbeat-config.yml](/Playbook%20and%20Configuration/configFile/metricbeat-config.yml)
 
 Playbook to install metricbeat (Docker Metrics):
-# [metricbeat-playbook.yml](/Playbook%20and%20Configuration/playbooks/metricbeat-playbook.yml) 
+### [metricbeat-playbook.yml](/Playbook%20and%20Configuration/playbooks/metricbeat-playbook.yml) 
 
-======================================================================================================================
+===================================================================================================
 
-This document contains the following details:
+### This document contains the following details:
 
-- Description of the Topology
-- Access Policies
-- ELK Configuration
-  - Beats in Use
-  - Machines Being Monitored
-- How to Use the Ansible Build
+  - Description of the Topology
+  - Access Policies
+  - ELK Configuration
+    - Beats in Use
+    - Machines Being Monitored
+  - How to Use the Ansible Build
 
-### Description of the Topology
+## Description of the Topology
 
 The main purpose of this network is to expose a load-balanced and monitored instance of the Damn Vulnerable Web App(DVWA)
 
@@ -56,7 +56,7 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 - `Metricbeat` is a lightweight shipper (or agent) which is used to collect system’s metrics and application metrics and send them to `Elastic Stack Server` (i.e Elasticsearch)"
 
 
-# `The configuration` details of each machine may be found below.
+### `The configuration` details of each machine may be found below.
 
 
 | **_Name_**  | **_Function_** | **_IP Address_** |**_Operating System_**|**_Public IP Address_**|
@@ -68,7 +68,7 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 | WebServer-3 | DVWA Container |    10.0.0.7      | Linux Ubuntu 18.04   |        N/A            |
 | ELK-Server  | Monitoring     |    10.1.0.4      | Linux Ubuntu 18.04   |   20.232.166.206      |  
 
-### Access Policies
+## Access Policies
 
 - The machines on the internal network are `NOT` exposed to the `public Internet`. 
 
@@ -98,7 +98,7 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 - ![List of All the Installed Instances](./Images/image193.png)
 
-### Elk Configuration
+## Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous for the following reasons:
 
@@ -119,9 +119,11 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
     - Increase memory to a value `262144` 
     - Download and install ELK container
     - Enable Service docker on boot
-  ![The playbook](./Playbook%20and%20Configuration/playbooks/installELK.yml) 
+ 
+ ![The playbook](./Playbook%20and%20Configuration/playbooks/installELK.yml) 
 
-- The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance. Docker gives unique names for the containers and we will use that name to start and attach to it. 
+- The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance. Docker gives unique names for the containers and 
+  we will use that name to start and to attach to it. 
 - My container name is `wonderful_keldysh`. 
 - (Each time you use the docker run, you create a new container that makes confusion, if not on purpose)
   To get into the container, I need to start the container and then attach to it with following commands.
@@ -141,7 +143,7 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 
 - ![Web-Server2](./Images/image105.png) 
 
-### Target Machines & Beats
+## Target Machines & Beats
 This ELK server is configured to monitor the following machines:
 
 - Web-Server1 __10.0.0.5__
@@ -169,7 +171,7 @@ These Beats allows us to collect the following information from each machine:
 - Collects `Metrics` from your system(s) and service(s) such as CPU, memory, disk usages, network usages, and     
   services such as Apache, MySQL, MongoDB, Nginx, Redis, Zookeeper, and so on.
 
-### Using the Playbook
+## Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
@@ -186,7 +188,7 @@ SSH into the control node and follow the steps below:
   - ![kibanaWelcome](./Images/kibanaWelcome.JPG)
   - ![KibanaMain](./Images/Kibana1.JPG)
 
-### Install `Docker.io and Pull Ansible Container`
+## Install `Docker.io and Pull Ansible Container`
 
 - Install `docker.io` onto the Jumpbox by running `sudo apt update` to update current databases, 
   then `sudo apt install docker.io`
@@ -198,7 +200,7 @@ SSH into the control node and follow the steps below:
 
 -  Run command will only be used `once` to start the container, and will not need to be run again. Running it again will generate another instance of a second docker container which is not needed. `docker rm [container_number]` can be used to remove unused containers.
 
-### Start and Access Docker Container
+## Start and Access Docker Container
 
 - To list out the name of the available Docker container running, type the command;
     `sudo docker container list -a` 
@@ -210,8 +212,7 @@ SSH into the control node and follow the steps below:
     `sudo docker attach wonderful_keldysh`
 
 
-
-### Running Playbooks from Ansible Container on Jump-Box-Provisioner
+## Running Playbooks from Ansible Container on Jump-Box-Provisioner
 
 - Running YAML playbooks referenced previously in the README will be executed with the following command: 
   `ansible-playbook [path and name of playbook]` as referenced by the examples:
