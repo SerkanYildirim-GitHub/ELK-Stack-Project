@@ -274,7 +274,7 @@ SSH into the control node and follow the steps below:
 | `nano [file name]`                        | edit and search inside a file           |
 
 
-- All the sreenshots during Automated ELK Stack Deployment can be seen from the ![fullProject](./fullProject/ folder.
+## All the sreenshots during `Automated ELK Stack Deployment` can be seen from the `fullProject` folder.
 
 
 
