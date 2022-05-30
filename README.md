@@ -6,7 +6,7 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the "ELK Azure Network" file(s) may be used to install only certain pieces of it, such as Filebeat.
 
-===============================================================================
+============================================================================================
 
 Configuring Web Docker VM(s) with Ansible and Launch Web DVWA Docker Container:
 ### [installWeb.yml](/Playbook%20and%20Configuration/playbooks/installWeb.yml) 
@@ -26,7 +26,7 @@ Metricbeat Configuration file highlighted only the most common options:
 Playbook to install metricbeat (Docker Metrics):
 ### [metricbeat-playbook.yml](/Playbook%20and%20Configuration/playbooks/metricbeat-playbook.yml) 
 
-===================================================================================================
+============================================================================================
 
 ### This document contains the following details:
 
