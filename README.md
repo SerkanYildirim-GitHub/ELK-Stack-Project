@@ -100,7 +100,9 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 ## Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous for the following reasons:
+- `Docker` is a software platform that enables you to build, test, and deploy applications quickly. 
+
+- `Ansible` was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous for the following reasons:
 
 - Ansible lets you quickly deploy multi-tier applications by using a **YAML** playbook.
   `Time savings` translate to major reductions of costs before deployment and those associated with downtime.
