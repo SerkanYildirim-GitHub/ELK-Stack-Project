@@ -16,7 +16,7 @@ Configuring Web Docker VM(s) with Ansible and Launch Web DVWA Docker Container:
 Configure E.L.K. Stack Server Docker VM with Ansible and increase Virtual Memory to "262144"        
 ### [installElk.yml](Playbook%20and%20Configuration/playbooks/installELK.yml)
 
-Filebeat Configuration file with updated IP Addressesfor current use:
+Filebeat Configuration file with updated IP Addresses for current use:
 ### [filebeat-config.yml](/Playbook%20and%20Configuration/configFile/filebeat-config.yml) 
 
 Playbook to install and launch filebeat service:
