@@ -1,5 +1,7 @@
 ## Automated ELK Stack Deployment
 
+**Security Note:** This project documents a decommissioned Azure-based cybersecurity lab. Any public or private IP addresses visible in screenshots were part of a temporary educational environment and are no longer active.
+
 The files in this repository were used to configure the network depicted below.
 
 # ![Automated ELK Stack Network Diagram](/Images/azurework.png)
